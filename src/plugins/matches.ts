@@ -1,4 +1,4 @@
-import Hapi, { server } from '@hapi/hapi'
+import Hapi from '@hapi/hapi'
 import Boom from '@hapi/boom'
 
 export const matchesPlugin = {
@@ -19,8 +19,14 @@ const getAllMatches = async (req: Hapi.Request, res: Hapi.ResponseToolkit) => {
     const { prisma } = req.server.app
 
     try {
-        return ""
+        const matches = await prisma.match.findMany({
+            include: {
+                scouter: true
+            }
+        })
+        return res.response(matches).code(200)
     } catch (err) {
         console.log(err)
+        return Boom.badImplementation("could not get all matches")
     }
 }

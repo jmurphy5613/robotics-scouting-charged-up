@@ -1,5 +1,6 @@
 import Hapi from '@hapi/hapi'
 import prismaPlugin from './plugins/prisma'
+import { matchesPlugin } from './plugins/matches'
 
 
 const server: Hapi.Server = Hapi.server({
@@ -12,7 +13,7 @@ const server: Hapi.Server = Hapi.server({
 
 const start = async ():Promise<Hapi.Server> => {
     await server.start()
-    await server.register([prismaPlugin, ])
+    await server.register([prismaPlugin, matchesPlugin])
     
     console.log(`server running on port ${server.info.uri}`)
 
