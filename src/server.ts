@@ -12,7 +12,7 @@ const server: Hapi.Server = Hapi.server({
 
 const start = async ():Promise<Hapi.Server> => {
     await server.start()
-    await server.register([prismaPlugin])
+    await server.register([prismaPlugin, ])
     
     console.log(`server running on port ${server.info.uri}`)
 
