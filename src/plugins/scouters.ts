@@ -5,7 +5,7 @@ import { AddScouter } from "../utils/interfaces"
 import { AddScouterValidator } from "../utils/validators"
 
 export const scoutersPlugin = {
-    name: 'app/matches',
+    name: 'app/scouters',
     dependencies: ['prisma'],
     register: async function (server: Hapi.Server) {
         server.route([
