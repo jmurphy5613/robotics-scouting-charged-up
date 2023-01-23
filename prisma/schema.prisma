@@ -21,6 +21,15 @@ model Match {
     matchNumber Int
     teamNumber Int
 
+    defensive Boolean
+    notes String
+    gamePieces String[]
+    endgameStatus String
+    endAutoStatus String
+    feedLocation String
+    feederType String
+    
+
     scouterId Int
     scouter Scouter @relation(fields: [scouterId], references: [id])
 }
