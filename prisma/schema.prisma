@@ -24,7 +24,7 @@ model Match {
     defensive Boolean
     notes String
     gamePieces String[]
-    endgameStatus String
+    endGameStatus String
     endAutoStatus String
     feedLocation String
     feederType String

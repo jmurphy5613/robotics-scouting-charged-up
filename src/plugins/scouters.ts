@@ -16,7 +16,7 @@ export const scoutersPlugin = {
             },
             {
                 method: 'POST',
-                path: '/scouters/get-all',
+                path: '/scouters/add',
                 handler: addScouter,
                 options: {
                     validate: AddScouterValidator
