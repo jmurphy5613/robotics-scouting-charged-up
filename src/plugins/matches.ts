@@ -43,6 +43,9 @@ const addMatch = async (req: Hapi.Request, res: Hapi.ResponseToolkit) => {
     const { prisma } = req.server.app
     const payload = req.payload as AddMatch
 
+    console.log(payload)
+    console.log(payload.gamePieces)
+
     try {
         const match = await prisma.match.create({
             data: {
