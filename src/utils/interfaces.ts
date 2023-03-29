@@ -7,7 +7,10 @@ export interface AddMatch {
     teamNumber: number,
     defensive: boolean,
     notes: string,
-    gamePieces: Array<string>
+    conesScoredAuto: Int32Array,
+    cubesScoredAuto: Int32Array,
+    conesScored: Int32Array,
+    cubesScored: Int32Array,
     endGameStatus: string,
     endAutoStatus: string,
     feedLocation: string,

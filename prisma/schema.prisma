@@ -23,13 +23,15 @@ model Match {
 
     defensive Boolean
     notes String
-    gamePieces String[]
+    conesScoredAuto Int[]
+    cubesScoredAuto Int[]
+    conesScored Int[] // these two are just teleop
+    cubesScored Int[] // format: [high, mid, low]
     endGameStatus String
     endAutoStatus String
     feedLocation String
     feederType String
     
-
     scouterId Int
     scouter Scouter @relation(fields: [scouterId], references: [id])
 }
