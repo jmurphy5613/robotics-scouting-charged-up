@@ -43,8 +43,6 @@ const addMatch = async (req: Hapi.Request, res: Hapi.ResponseToolkit) => {
     const { prisma } = req.server.app
     const payload = req.payload as AddMatch
 
-    console.log(payload)
-    console.log(payload.gamePieces)
 
     try {
         const match = await prisma.match.create({
@@ -53,7 +51,10 @@ const addMatch = async (req: Hapi.Request, res: Hapi.ResponseToolkit) => {
                 teamNumber: payload.teamNumber,
                 defensive: payload.defensive,
                 notes: payload.notes,
-                gamePieces: payload.gamePieces,
+                conesScoredAuto: payload.conesScoredAuto,
+                cubesScoredAuto: payload.cubesScoredAuto,
+                conesScored: payload.conesScored,
+                cubesScored: payload.cubesScored,
                 endAutoStatus: payload.endAutoStatus,
                 endGameStatus: payload.endGameStatus,
                 feederType: payload.feederType,
