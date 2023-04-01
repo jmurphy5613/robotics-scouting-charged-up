@@ -5,7 +5,6 @@ const prisma = new PrismaClient()
 
 async function main() {
     await prisma.match.deleteMany({})
-    await prisma.scouter.deleteMany({})
 
 }
 
