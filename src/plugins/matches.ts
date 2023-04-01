@@ -27,11 +27,7 @@ const getAllMatches = async (req: Hapi.Request, res: Hapi.ResponseToolkit) => {
     const { prisma } = req.server.app
 
     try {
-        const matches = await prisma.match.findMany({
-            include: {
-                scouter: true
-            }
-        })
+        const matches = await prisma.match.findMany({})
         return res.response(matches).code(200)
     } catch (err) {
         console.log(err)
@@ -59,7 +55,7 @@ const addMatch = async (req: Hapi.Request, res: Hapi.ResponseToolkit) => {
                 endGameStatus: payload.endGameStatus,
                 feederType: payload.feederType,
                 feedLocation: payload.feedLocation,
-                scouterId: payload.scouterId
+                scouter: payload.scouter
             }
         })
         return res.response(match).code(200)

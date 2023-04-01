@@ -16,5 +16,5 @@ export const AddMatchValidator = Joi.object({
     endAutoStatus: Joi.string().required(),
     feedLocation: Joi.string().required(),
     feederType: Joi.string().required(),
-    scouterId: Joi.number().required()
+    scouter: Joi.string().required()
 })

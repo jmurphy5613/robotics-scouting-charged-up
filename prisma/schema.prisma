@@ -9,13 +9,6 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
-
-model Scouter {
-    id Int @id @default(autoincrement())
-    name String
-    matches Match[]
-}
-
 model Match {
     id Int @id @default(autoincrement())
     matchNumber Int
@@ -31,7 +24,5 @@ model Match {
     endAutoStatus String
     feedLocation String
     feederType String
-    
-    scouterId Int
-    scouter Scouter @relation(fields: [scouterId], references: [id])
+    scouter String
 }

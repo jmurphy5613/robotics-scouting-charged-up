@@ -15,5 +15,5 @@ export interface AddMatch {
     endAutoStatus: string,
     feedLocation: string,
     feederType: string,
-    scouterId: number
+    scouter: string
 }
